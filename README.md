@@ -16,7 +16,7 @@
 |group|integer|null: false|
 |user_id|integer||null: false, foreign_key: true||
 ### Association
-- has_many :usrs,  throuh:  :groups_usrs
+- has_many :users,  throuh:  :groups_usrs
 - has_many :massages
 
 
