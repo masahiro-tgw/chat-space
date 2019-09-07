@@ -1,0 +1,12 @@
+@mixin header ($color:#333,$font-size:20px,$margin-top:35px,){
+   color     : $color;
+   font-size : $font-size;
+   margin-top: $margin-top;
+}
+    
+
+@mixin messages ($color: #434a54,$font-size:16px,){
+     color    : $color;
+     font-size: $font-size;
+}
+
