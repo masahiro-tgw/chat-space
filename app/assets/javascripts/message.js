@@ -1,8 +1,9 @@
 
 $(function(){ 
   function buildHTML(message){
-   if ( message.image ) {
-     var html =
+    var content = message.content ? `${ message.content }` : "";
+    var image = message.image ? `<img src= ${ message.image }>` : "";
+    var html = 
       `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
            <div class="upper-message__user-name">
@@ -14,31 +15,12 @@ $(function(){
          </div>
          <div class="lower-message">
            <p class="lower-message__content">
-             ${message.content}
+             ${content}
            </p>
          </div>
-         <img src=${message.image} >
+         <img src=${image} >
        </div>`
      return html;
-   } else {
-     var html =
-      `<div class="message" data-message-id=${message.id}>
-         <div class="upper-message">
-           <div class="upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="upper-message__date">
-             ${message.date}
-           </div>
-         </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
-             ${message.content}
-           </p>
-         </div>
-       </div>`
-     return html;
-   };
  }
 $('.js-form').on('submit', function(e){
  e.preventDefault();
