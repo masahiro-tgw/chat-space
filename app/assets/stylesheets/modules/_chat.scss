@@ -27,8 +27,10 @@
       line-height: 40px;
       padding: 0 20px;
       &__button {
+        a{
         color: $light_blue;
         text-decoration: none;
+        }
       }
     }
   }
