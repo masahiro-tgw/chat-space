@@ -1,3 +1,4 @@
+
 .chat {
   width: calc(100% - 300px);
   .header {
@@ -7,15 +8,11 @@
     .left-header {
       float: left;
       &__title {
-        color: #333;
-        font-size: 20px;
-        margin-top: 35px;
+        @include header;
       }
       &__members {
-        color: #999;
+        @include header(#999,12px,15px);
         display: flex;
-        font-size: 12px;
-        margin-top: 15px;
         .member {
           display: inline-block;
           padding-right: 5px;
@@ -23,13 +20,16 @@
       }
     }
     .right-header {
+      @include header($light_blue,$margin-top:28px);
       border: 1px solid $light_blue;
-      color: $light_blue;
       float: right;
       height: 40px;
       line-height: 40px;
-      margin-top: 28px;
       padding: 0 20px;
+      &__button {
+        color: $light_blue;
+        text-decoration: none;
+      }
     }
   }
 
@@ -37,26 +37,24 @@
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
+    height: calc(100vh - 190px);
+    overflow: scroll;
     .message {
       .upper-message {
         display: flex;
         &__user-name {
-          color: #434a54;
-          font-size: 16px;
+          @include messages();
           font-weight: bold;
         }
         &__date {
-          color: #999;
-          font-size: 12px;
+          @include messages( #999,12px,);
           padding-left: 10px;
         }
       }
       .lower-message {
         margin-top: 10px;
         &__content {
-          color: #434a54;
-          font-size: 14px;
+          @include messages( #434a54, 14px,);
           margin-bottom: 40px;
         }
       }
